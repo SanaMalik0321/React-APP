@@ -21,16 +21,19 @@ function App() {
     fetchData(`${api}/?results=100`);
     }, [])
 
-  function UserComponent() {
-    
+  function UserComponent() {  
     console.log("Mount here the user component")
     console.log(user)  
+    function changeColor() {
+      var element = document.getElementById("mytableStyle");
+      element.classList.add("mytable_style");
+    }
     return (
     <>
     <h1>Technical Proof</h1>
     <header>
       <div className='header_buttons'>
-      <button>Rows Color</button>
+      <button onClick={changeColor}>Rows Color</button>
       <button>Order Country</button>
       <button>Reset State</button>
       <input placeholder="Filter by country"></input>
@@ -46,10 +49,10 @@ function App() {
           <th>Country</th>
         </tr>
       </thead>
-      <tbody>
-        {user.map((item) => {
+      <tbody id="mytableStyle">
+        {user.map((item, index) => {
           return(
-          <tr>           
+          <tr key={index}>           
             <td><img src={item.picture.thumbnail}/></td>
             <td>{item.name.first}</td>
             <td>{item.name.last}</td>

@@ -13,7 +13,7 @@ The steps to follow:
 - [X] Import this README in the project
 - [X] Import a simple styling with Water.Css (https://watercss.kognise.dev/)
 - [X] Fetch 100 rows of data using the API.
-- [] Provide the option to color rows as shown in the example.
+- [X] Provide the option to color rows as shown in the example.
 - [] Allow the data to be sorted by country as demonstrated in the example.
 - [] Enable the ability to delete a row as shown in the example.
 - [] Implement a feature that allows the user to restore the initial state, meaning that all deleted rows will be recovered.

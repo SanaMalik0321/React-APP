@@ -1696,3 +1696,9 @@ thead{
   display: flex;
   margin-bottom: 50px;
 }
+.mytable_style > tr:nth-child(odd){
+    background-color: gray;  
+}
+.mytable_style> tr:nth-child(even){
+  background-color: lightgray;  
+}
