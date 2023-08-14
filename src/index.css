@@ -248,7 +248,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   margin-top: 24px;
 }
 
@@ -465,8 +465,7 @@ select {
 input {
   color: #1d1d1d;
   color: var(--form-text);
-  background-color: #efefef;
-  background-color: var(--background);
+  background-color: #f9f9f9; 
   font-family: inherit;
   font-size: inherit;
   margin-right: 6px;
@@ -497,7 +496,6 @@ button {
   color: #1d1d1d;
   color: var(--form-text);
   background-color: #efefef;
-  background-color: var(--background);
   font-family: inherit;
   font-size: inherit;
   margin-right: 6px;
@@ -511,8 +509,7 @@ button {
 @media (prefers-color-scheme: dark) {
 
   button {
-  background-color: #161f27;
-  background-color: var(--background);
+  background-color: #f9f9f9;
   }
 }
 
@@ -587,8 +584,8 @@ select {
 }
 
 button {
-  background-color: #d0cfcf;
-  background-color: var(--button-base);
+  background-color: #f9f9f9;
+  background-color: #f9f9f9;
   padding-right: 30px;
   padding-left: 30px;
 }
@@ -647,8 +644,7 @@ input[type='button'] {
 }
 
 button:hover {
-  background: #9b9b9b;
-  background: var(--button-hover);
+  background: #f9f9f9;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1686,4 +1682,17 @@ body > footer {
     color: #00f;
     text-decoration: underline;
   }
+}
+td, th{
+  vertical-align: middle;
+}
+tbody tr:nth-child(even){
+  background-color: unset;
+}
+thead{
+  border-bottom: 0;
+}
+.header_buttons{
+  display: flex;
+  margin-bottom: 50px;
 }

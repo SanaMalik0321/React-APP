@@ -12,7 +12,7 @@ The steps to follow:
 - [X] Create a new APP React Javascript with Vite (https://vitejs.dev/)
 - [X] Import this README in the project
 - [X] Import a simple styling with Water.Css (https://watercss.kognise.dev/)
-- [] Fetch 100 rows of data using the API.
+- [X] Fetch 100 rows of data using the API.
 - [] Provide the option to color rows as shown in the example.
 - [] Allow the data to be sorted by country as demonstrated in the example.
 - [] Enable the ability to delete a row as shown in the example.
