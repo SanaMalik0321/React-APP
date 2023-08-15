@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+.header_buttons{
+  display: flex;
+  margin-bottom: 50px;
+}
+.colorShow > tr:nth-child(odd){
+  background-color: gray;  
+}
+.colorShow> tr:nth-child(even){
+background-color: lightgray;  
+}
