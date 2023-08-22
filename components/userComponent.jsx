@@ -1,5 +1,11 @@
 function UserComponent(user) { 
-  const userData = user.data;      
+  const userData = user.data; 
+  const setUserData = user.setData;
+
+  const deleteRow = (userId) => {
+    const updatedRows = [...userData.filter((row) => row.login.uuid !== userId)];
+    setUserData({results: updatedRows});
+};     
     return (
     <>  
     <table width="100%"> 
@@ -9,6 +15,8 @@ function UserComponent(user) {
           <th>Name</th>
           <th>SurName</th>
           <th>Country</th>
+          <th>Email</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody id="colorShow">
@@ -18,7 +26,8 @@ function UserComponent(user) {
             <td><img src={item.picture.thumbnail}/></td>
             <td>{item.name.first}</td>
             <td>{item.name.last}</td>
-            <td>{item.location.country}</td>                      
+            <td>{item.location.country}</td> 
+            <td><button onClick={() => deleteRow(item.login.uuid)}>Delete</button></td>                  
           </tr>
           )
         })}

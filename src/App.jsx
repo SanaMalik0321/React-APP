@@ -32,7 +32,7 @@ function App() {
   ) : (
     <>
     <Header data={userData.results} setData={setUserData}/>
-    <UserComponent data={userData.results}/>
+    <UserComponent data={userData.results} setData={setUserData}/>
     </>
   )}  
   </>
