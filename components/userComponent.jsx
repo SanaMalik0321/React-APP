@@ -1,11 +1,15 @@
 function UserComponent(user) { 
   const userData = user.data; 
   const setUserData = user.setData;
+  const dataOriginal = user.dataOriginal;
+  const setDataOriginal = user.setDataOriginal;
+
 
   const deleteRow = (userId) => {
     const updatedRows = [...userData.filter((row) => row.login.uuid !== userId)];
     setUserData({results: updatedRows});
-};     
+    setDataOriginal({results: dataOriginal})
+  };     
     return (
     <>  
     <table width="100%"> 
@@ -14,8 +18,7 @@ function UserComponent(user) {
           <th>Photo</th>
           <th>Name</th>
           <th>SurName</th>
-          <th>Country</th>
-          <th>Email</th>
+          <th>Country</th>          
           <th>Actions</th>
         </tr>
       </thead>
