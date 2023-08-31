@@ -1,0 +1,15 @@
+.header_buttons{
+    display: flex;
+    margin-bottom: 50px;
+}
+ .activeRowColor > tr:nth-child(odd){
+    background-color: #d1cfcf;  
+}
+.activeRowColor > tr:nth-child(even){
+  background-color: #eeebeb;  
+}
+.activeRowColor > tr > td > button{
+    background-color: #fff;
+}
+  
+  

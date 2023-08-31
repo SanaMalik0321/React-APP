@@ -1,14 +1,8 @@
-function UserComponent(user) { 
-  const userData = user.data; 
-  const setUserData = user.setData;
-  const dataOriginal = user.dataOriginal;
-  const setDataOriginal = user.setDataOriginal;
-
-
+function User(props) { 
+  const {userData, setUserData, activeRowColor} = props;
   const deleteRow = (userId) => {
     const updatedRows = [...userData.filter((row) => row.login.uuid !== userId)];
-    setUserData({results: updatedRows});
-    setDataOriginal({results: dataOriginal})
+    setUserData(updatedRows);
   };     
     return (
     <>  
@@ -22,7 +16,7 @@ function UserComponent(user) {
           <th>Actions</th>
         </tr>
       </thead>
-      <tbody id="colorShow">
+      <tbody id="tableColor" className={activeRowColor ? 'activeRowColor' : ''}>
         {userData.map((item, index) => {
           return(
           <tr key={index}>           
@@ -39,4 +33,4 @@ function UserComponent(user) {
     </>
     )
 }
-export default UserComponent;
+export default User;

@@ -1,41 +1,20 @@
-import { useEffect, useRef, useState } from 'react'
-import './App.css'
-import UserComponent from '../components/userComponent'
-import Header from '../components/header'
-import Loading from '../components/loadingComponent'
+import { useState } from 'react'
+import './styles/header.css'
+import Loading from './components/loading'
+import useFetch from './hooks/useFetch'
+import { API_URL } from './const/string'
+import MainUser from './components/mainUser'
 function App() {
   
-  const api = "https://randomuser.me/api"
-  const [isLoading, setIsLoading] = useState(true)
-  const [userData, setUserData] = useState({})
-  const userInitialData = useRef({})
-
-  const fetchData = async (url) => {
-    try {
-      const response = await fetch(url);
-      const data = await response.json();     
-      setUserData(data);
-      userInitialData.current.value = data
-      setIsLoading(false)
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData(`${api}/?results=100`);
-  }, [])
-
- 
+  const [activeRowColor, setActiveRowColor] = useState(false)
+  const {userList, setUserList, isLoading, initial_User_List} = useFetch(`${API_URL}/?results=100`);
+  
   return (
-  <>  
+   <>
   {isLoading ? (
     <Loading/>
-  ) : (
-    <>
-    <Header data={userData.results} intialData={userInitialData.current.value.results} setData={setUserData}/>
-    <UserComponent data={userData.results} setData={setUserData}/>
-    </>
+  ):(   
+   <MainUser userData={userList} setUserData={setUserList} initialData={initial_User_List.current} activeRowColor={activeRowColor} setActiveRowColor={setActiveRowColor}/>   
   )}  
   </>
   )

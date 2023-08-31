@@ -645,6 +645,7 @@ input[type='button'] {
 
 button:hover {
   background: #f9f9f9;
+  border: 1px solid #01b7f2;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1335,11 +1336,6 @@ tbody tr:nth-child(even) {
   background-color: #161f27;
   background-color: var(--background);
   }
-}
-
-tbody tr:nth-child(even) button {
-  background-color: #f7f7f7;
-  background-color: var(--background-alt);
 }
 
 @media (prefers-color-scheme: dark) {
