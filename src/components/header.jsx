@@ -1,19 +1,19 @@
  function Header(props) { 
-    const {userData, setUserData, initialData, setActiveRowColor} = props;
+    const {userList, setUserList, initial_User_List, setActiveRowColor, activeRowColor} = props;
     function tableColorShow() {
-        setActiveRowColor(true)       
+        setActiveRowColor(!activeRowColor)        
     }
     function sortbyCountry() {  
-        const _userList = [...userData]    
+        const _userList = [...userList]    
         const sortedList = _userList.sort((a, b) =>
         a.location.country.localeCompare(b.location.country));       
-        setUserData(sortedList)              
+        setUserList(sortedList)              
     }  
     function resetRow() {   
-        const _userList = [...initialData]  
+        const _userList = [...initial_User_List]  
         const sortedList = _userList.sort((a, b) =>
         a.location.country.localeCompare(b.location.country));         
-        setUserData(sortedList)
+        setUserList(sortedList)
     }
    return(
     <>

@@ -1,8 +1,8 @@
 function User(props) { 
-  const {userData, setUserData, activeRowColor} = props;
+  const {userList, setUserList, activeRowColor} = props;
   const deleteRow = (userId) => {
-    const updatedRows = [...userData.filter((row) => row.login.uuid !== userId)];
-    setUserData(updatedRows);
+    const updatedRows = [...userList.filter((row) => row.login.uuid !== userId)];
+    setUserList(updatedRows);
   };     
     return (
     <>  
@@ -17,7 +17,7 @@ function User(props) {
         </tr>
       </thead>
       <tbody id="tableColor" className={activeRowColor ? 'activeRowColor' : ''}>
-        {userData.map((item, index) => {
+        {userList.map((item, index) => {
           return(
           <tr key={index}>           
             <td><img src={item.picture.thumbnail}/></td>
