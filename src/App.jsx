@@ -8,8 +8,11 @@ import User from './components/user'
 function App() {
   
   const [activeRowColor, setActiveRowColor] = useState(false)
+  const [filterByCountry, setFilterByCountry] = useState("");
   const {userList, setUserList, isLoading, initial_User_List} = useFetch(`${API_URL}/?results=100`);
   const DATA_USER = {
+    filterByCountry: filterByCountry,
+    setFilterByCountry: setFilterByCountry,
     userList: userList,
     setUserList: setUserList,
     isLoading: isLoading,

@@ -1,5 +1,6 @@
+import { useState } from 'react'
  function Header(props) { 
-    const {userList, setUserList, initial_User_List, setActiveRowColor, activeRowColor} = props;
+    const {userList, setUserList, initial_User_List, setActiveRowColor, activeRowColor, setFilterByCountry} = props;
     function tableColorShow() {
         setActiveRowColor(!activeRowColor)        
     }
@@ -14,7 +15,7 @@
         const sortedList = _userList.sort((a, b) =>
         a.location.country.localeCompare(b.location.country));         
         setUserList(sortedList)
-    }
+    }     
    return(
     <>
     <h1>Technical Proof</h1>    
@@ -23,7 +24,7 @@
     <button onClick={tableColorShow}>Rows Color</button>
     <button onClick={sortbyCountry}>Order Country</button>
     <button onClick={resetRow}>Reset State</button>
-    <input placeholder="Filter by country"></input>
+    <input onChange={(e)=> {setFilterByCountry(e.target.value)}} placeholder="Filter by country"></input>
     </div>
   </header>
   </>
